@@ -1,6 +1,13 @@
-# node_koa
-node-koa web
+# bitfans-vue-fe
 
-npm i
+> A Node-koa Web
 
+## Build Setup
+
+```bash
+npm install
+```
+
+```bash
 npm run dev
+```
