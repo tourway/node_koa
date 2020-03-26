@@ -14,6 +14,13 @@ const { historyApiFallback } = require('koa2-connect-history-api-fallback');
 const index = require('./routes/index')
 const users = require('./routes/users')
 
+app.use(async (ctx, next) => {
+  ctx.set('Access-Control-Allow-Origin', 'https://webapi.gbex.co/');
+  ctx.set('Access-Control-Allow-Methods', 'PUT,DELETE,POST,GET');
+  ctx.set('Access-Control-Max-Age', 3600 * 24);
+  await next();
+ });
+
 // error handler
 onerror(app)
 
