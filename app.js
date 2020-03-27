@@ -25,31 +25,6 @@ const { historyApiFallback } = require('koa2-connect-history-api-fallback');
 const index = require('./routes/index')
 const users = require('./routes/users')
 
-/**  * 使用http代理请求转发，用于代理页面当中的http请求 * 这个代理请求得写在bodyparse的前面， *  */
-// app.use(async(ctx, next) => {
-//   console.log(ctx);
-//   if (ctx.url.startsWith('/web-api')) {//匹配有api字段的请求url
-//     ctx.respond = false // 绕过koa内置对象response ，写入原始res对象，而不是koa处理过的response        
-//     await k2c(httpProxy({        
-//       target: 'https://webapi.gbex.co',         
-//       changeOrigin: true,        
-//       secure: false,        
-//       pathRewrite: {        
-//         '^/web-api': ''
-//       }        
-//     }))(ctx,next);    
-//   }    
-//   await next()
-// })
-
-
-// app.use(async (ctx, next) => {
-//   ctx.set('Access-Control-Allow-Origin', 'https://webapi.gbex.co/');
-//   ctx.set('Access-Control-Allow-Methods', 'PUT,DELETE,POST,GET');
-//   ctx.set('Access-Control-Max-Age', 3600 * 24);
-//   await next();
-//  });
-
 // error handler
 onerror(app)
 
